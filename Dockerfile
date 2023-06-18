@@ -6,6 +6,7 @@ ARG GROUP_ID
 RUN apt-get update && apt-get install -y locales && rm -rf /var/lib/apt/lists/* \
 	&& localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 ENV LANG en_US.UTF-8
+ENV PATH="${PATH}:/home/yocto/poky/scripts:/home/yocto/poky/bitbake/bin"
 
 RUN export DEBIAN_FRONTEND=noninteractive
 RUN export DEBCONF_NONINTERACTIVE_SEEN=true

@@ -45,6 +45,17 @@ EOF
 
 source oe-init-build-env
 bitbake core-image-sato
+runqemu qemux86-64
+
+sudo apt update
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install python3.8
+sudo apt-get install python3.8-venv
+PATH="${PATH}:/home/gjlendrino-tas/Documents/TASE/git/obsw/yocto-3.3.2/poky/bitbake/bin"
+python3.8 -m venv venv
+source venv/bin/activate
+python3.8 ../scripts/runqemu qemux86-64
 
 
 docker run --rm -itd --name ubuntu-${VERSION}-bitbake -v ~/yocto:/home/yocto/yocto ubuntu:${VERSION}-bitbake
