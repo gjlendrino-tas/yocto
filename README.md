@@ -70,3 +70,9 @@ IMAGEID=`docker commit ubuntu-${VERSION}-bitbake`
 IMAGEID=${IMAGEID/sha256:/}
 docker tag ${IMAGEID} ubuntu:${VERSION}-bitbake
 docker rm -f ubuntu-${VERSION}-bitbake
+
+https://www.codeinsideout.com/blog/yocto/raspberry-pi/#add-layers
+https://layers.openembedded.org/layerindex/branch/dunfell/layer/meta-raspberrypi/
+https://layers.openembedded.org/layerindex/branch/hardknott/layer/meta-raspberrypi/
+
+https://www.tecmint.com/install-qemu-kvm-ubuntu-create-virtual-machines/
